@@ -33,15 +33,22 @@ const addTodo = (task) => {
 };
 
 const deleteTask = (id) => {
-  tasks.value = tasks.value.filter((task) => {
-    return task.id !== id;
-  });
+  tasks.value = tasks.value.filter((task) => task.id !== id);
+};
+
+const toggleDone = (id) => {
+  const index = tasks.value.findIndex((task) => task.id === id);
+  tasks.value[index].done = !tasks.value[index].done;
 };
 </script>
 
 <template>
   <div class="max-w-[630px] mx-auto mt-0 sm:mt-[8.5px]">
-    <AppLayoutTasks :tasks="tasks" @deleteTask="deleteTask" />
+    <AppLayoutTasks
+      :tasks="tasks"
+      @deleteTask="deleteTask"
+      @toggleDone="toggleDone"
+    />
     <AppInput @addTodo="addTodo" />
   </div>
 </template>
