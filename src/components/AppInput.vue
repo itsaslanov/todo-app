@@ -38,7 +38,7 @@ const addTodo = () => {
   >
     <form class="flex gap-2" @submit.prevent="addTodo">
       <input
-        class="bg-light-purple w-full p-2.5 rounded-xl font-light text-sm sm:text-lg"
+        class="bg-light-purple focus:outline-none w-full p-2.5 rounded-xl font-light text-sm sm:text-lg"
         type="text"
         v-model.trim="content"
         name="text"
