@@ -18,16 +18,17 @@ const hoursAndMinutes = `${currentData.getHours()}:${currentData
 
 const addTodo = () => {
   if (content.value === "") {
-    console.log("error");
-  } else {
-    const text = content.value;
-    emits("addTodo", {
-      id: Math.round(Math.random() * 10000),
-      content: text,
-      done: false,
-      date: hoursAndMinutes,
-    });
+    return;
   }
+
+  const text = content.value;
+  content.value = "";
+  emits("addTodo", {
+    id: Math.round(Math.random() * 10000),
+    content: text,
+    done: false,
+    date: hoursAndMinutes,
+  });
 };
 </script>
 

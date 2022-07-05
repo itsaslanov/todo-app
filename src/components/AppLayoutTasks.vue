@@ -24,7 +24,7 @@ const deleteTask = (id) => {
         <li
           class="bg-light-gray py-3 px-6 border-b-2 border-light-gray-20 md:flex md:justify-between"
         >
-          <span class="limited-text text-base sm:text-lg">
+          <span class="text-base sm:text-lg">
             {{ task.content }}
           </span>
           <div class="flex sm:flex-col gap-2 justify-between">
