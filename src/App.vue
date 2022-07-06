@@ -40,6 +40,8 @@ const toggleDone = (id) => {
   const index = tasks.value.findIndex((task) => task.id === id);
   tasks.value[index].done = !tasks.value[index].done;
 };
+
+const show = ref(true);
 </script>
 
 <template>
