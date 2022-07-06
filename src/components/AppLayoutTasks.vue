@@ -1,7 +1,15 @@
 <script setup>
-const { tasks } = defineProps({
+import { computed } from "@vue/runtime-core";
+
+const { tasks, loading, checkTheLength } = defineProps({
   tasks: {
     type: Object,
+  },
+  loading: {
+    type: Boolean,
+  },
+  checkTheLength: {
+    type: Boolean,
   },
 });
 
@@ -24,9 +32,22 @@ const toggleDone = (id) => {
         class="absolute sm:w-[105px] w-[80px] h-[4px] bg-purple rounded-xl left-6"
       ></div>
     </div>
-    <div class="h-[87vh] sm:h-[84vh] overflow-x-hidden overflow-scroll">
+    <div
+      class="h-[87vh] sm:h-[84vh] overflow-x-hidden overflow-scroll relative"
+    >
+      <div v-if="loading" class="loader">Please wait...</div>
+      <div
+        v-else-if="checkTheLength"
+        class="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]"
+      >
+        <img
+          class="w-full pointer-events-none"
+          src="../assets/icons/not-found.png"
+          alt="Not-found"
+        />
+      </div>
       <!-- TODOS -->
-      <TransitionGroup name="list" tag="ul" class="list-none">
+      <TransitionGroup name="list" tag="ul" class="list-none instruments">
         <li
           v-for="task in tasks"
           :key="task.id"
@@ -89,7 +110,7 @@ const toggleDone = (id) => {
               </AppButton>
             </div>
             <div class="self-end sm:self-center">
-              <span class="text-sm sm:text-base">{{ task.date }}</span>
+              <span class="text-sm sm:text-base">{{ task.hours }}</span>
             </div>
           </div>
         </li>
@@ -99,6 +120,8 @@ const toggleDone = (id) => {
 </template>
 
 <style scoped>
+@import url('../assets/loader.css');
+
 .done {
   background-color: #4dd272 !important;
 }

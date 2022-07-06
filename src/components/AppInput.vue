@@ -9,26 +9,13 @@ const isButtonDisabled = computed(() => {
   return { "opacity-30 cursor-not-allowed": !content.value };
 });
 
-// Current date
-const currentData = new Date();
-const hoursAndMinutes = `${currentData.getHours()}:${currentData
-  .getMinutes()
-  .toString()
-  .padStart(2, "0")}`;
-
 const addTodo = () => {
   if (content.value === "") {
     return;
   }
-
   const text = content.value;
   content.value = "";
-  emits("addTodo", {
-    id: Math.round(Math.random() * 10000),
-    content: text,
-    done: false,
-    date: hoursAndMinutes,
-  });
+  emits("addTodo", { id: Math.floor(Math.random() * 1000), text,  });
 };
 </script>
 
