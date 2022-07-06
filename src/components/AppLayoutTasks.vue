@@ -38,10 +38,10 @@ const toggleDone = (id) => {
       <div v-if="loading" class="loader">Please wait...</div>
       <div
         v-else-if="checkTheLength"
-        class="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]"
+        class="absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] w-64 sm:w-80"
       >
         <img
-          class="w-full pointer-events-none"
+          class="pointer-events-none"
           src="../assets/icons/not-found.png"
           alt="Not-found"
         />
