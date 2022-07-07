@@ -33,7 +33,7 @@ const toggleDone = (id) => {
       ></div>
     </div>
     <div
-      class="h-[87vh] sm:h-[84vh] overflow-x-hidden overflow-scroll relative"
+      class="h-[87vh] sm:h-[83vh] overflow-x-hidden overflow-scroll relative"
     >
       <div v-if="loading" class="loader">Please wait...</div>
       <div

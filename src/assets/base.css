@@ -14,6 +14,8 @@ body {
   background-color: #efeef5;
   color: #333;
   position: relative;
+  background-image: url("/src/assets/icons/bg.png");
+  width: 100%;
+  background-size: 994px 100%;
+  background-position: center;
 }
-
-

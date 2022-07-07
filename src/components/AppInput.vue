@@ -21,7 +21,7 @@ const addTodo = () => {
 
 <template>
   <AppCard
-    class="py-4 px-3 sm:py-4 sm:px-6 fixed bottom-0 w-[100%] sm:w-[630px] drop-shadow"
+    class="py-4 px-3 sm:py-4 sm:px-6 fixed bottom-[0px] sm:bottom-[10px] w-[100%] sm:w-[630px] drop-shadow"
   >
     <form class="flex gap-2" @submit.prevent="addTodo">
       <input

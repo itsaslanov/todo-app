@@ -56,10 +56,9 @@ const toggleDone = (id) => {
 
 // ONMOUNTED, this gets all stored data from firebase
 onMounted(() => {
+  loading.value = true;
   firebaseListener = onSnapshot(fbCollectionQuery, (querySnapshot) => {
-    loading.value = true;
     const fbTasks = [];
-
     querySnapshot.forEach((doc) => {
       const todo = {
         id: doc.id,
