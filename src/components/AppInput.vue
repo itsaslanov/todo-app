@@ -17,6 +17,12 @@ const addTodo = () => {
   content.value = "";
   emits("addTodo", { id: Math.floor(Math.random() * 1000), text,  });
 };
+
+const vAutofocus = {
+  mounted: (element) => {
+    element.focus()
+  }
+}
 </script>
 
 <template>
@@ -30,6 +36,7 @@ const addTodo = () => {
         v-model.trim="content"
         name="text"
         placeholder="Type your task here..."
+        v-autofocus
       />
       <AppButton
         class="px-12 rounded-xl text-sm sm:text-lg"
